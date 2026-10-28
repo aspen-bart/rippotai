@@ -6,10 +6,14 @@ export const SESSION_HOURS = 8;
 
 export type SessionPayload = { sub: string; email: string; name: string };
 
+// Zonder AUTH_SECRET in productie (bv. de demo zonder beheer) een willekeurige sleutel per instantie:
+// veilig, maar sessies overleven dan geen herstart. Stel AUTH_SECRET in zodra /admin live gaat.
+let ephemeral: Uint8Array | null = null;
+
 function secret() {
   const s = process.env.AUTH_SECRET;
   if (!s || s.length < 32) {
-    if (process.env.NODE_ENV === "production") throw new Error("AUTH_SECRET ontbreekt of is korter dan 32 tekens");
+    if (process.env.NODE_ENV === "production") return (ephemeral ??= crypto.getRandomValues(new Uint8Array(32)));
     return new TextEncoder().encode("dev-only-secret-please-change-me-0123456789");
   }
   return new TextEncoder().encode(s);

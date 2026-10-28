@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // De demo-database (gebruikt zonder DATABASE_URL, zie src/lib/db.ts) moet in de serverbundel zitten.
+  outputFileTracingIncludes: { "/**/*": ["./prisma/demo.db"] },
   images: {
     formats: ["image/avif", "image/webp"],
   },

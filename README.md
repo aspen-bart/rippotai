@@ -62,7 +62,18 @@ Er is één schema (`prisma/schema.prisma`). Draai Prisma altijd via de npm-scri
 Anders gewoon SQLite. Codewijzigingen zijn daarvoor niet nodig; de client bevat ook de engine voor Netlify
 (`binaryTargets`).
 
-## Live zetten op Netlify
+## Demomodus (Netlify zonder database)
+
+Staat er geen `DATABASE_URL` ingesteld, dan draait de site op de meegeleverde snapshot `prisma/demo.db`
+(alle content, zonder beheerder). Je hoeft dan niets in te stellen in Netlify. Bestellingen en berichten worden
+niet blijvend bewaard en `/admin` stuurt door naar de homepage. De snapshot vernieuwen na contentwijzigingen:
+
+```bash
+DATABASE_URL="file:./demo.db" ADMIN_PASSWORD="" npx prisma db push --skip-generate --force-reset
+DATABASE_URL="file:./demo.db" ADMIN_PASSWORD="" npx tsx prisma/seed.ts
+```
+
+## Live zetten op Netlify (met database en beheer)
 
 1. **PostgreSQL-database aanmaken**, bv. via Netlify DB of [Neon](https://neon.tech). Bij Neon: de *pooled* URL is
    `DATABASE_URL`, de *direct* URL is `DIRECT_URL`.

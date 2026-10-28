@@ -54,3 +54,6 @@ next-env.d.ts
 
 # gegenereerd door scripts/prisma.mjs
 /prisma/schema.postgres.prisma
+
+# demo-snapshot (zonder beheerder) voor deploys zonder DATABASE_URL
+!/prisma/demo.db
