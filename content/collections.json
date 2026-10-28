@@ -1,0 +1,170 @@
+[
+  {
+    "handle": "cartoleria-ecologica-e-piantabile",
+    "parent": null,
+    "group": "private",
+    "image": null,
+    "title": {
+      "it": "Cartoleria Ecologica e Piantabile",
+      "en": "Cartoleria Ecologica e Piantabile"
+    },
+    "description": {
+      "it": "",
+      "en": ""
+    }
+  },
+  {
+    "handle": "carta-piantabile-personalizzata",
+    "parent": "cartoleria-ecologica-e-piantabile",
+    "group": "private",
+    "image": "/images/collections/carta-piantabile-personalizzata.png",
+    "title": {
+      "it": "Carta Piantabile Personalizzata | Biglietti e Idee Regalo Solidali - Rippotai",
+      "en": "Carta Piantabile Personalizzata | Biglietti e Idee Regalo Solidali - Rippotai"
+    },
+    "description": {
+      "it": "<p>Scopri la nostra collezione di <strong>biglietti solidali</strong> e <strong>idee regalo in carta piantabile personalizzata</strong>: un gesto originale, sostenibile e creativo per rendere ogni occasione speciale davvero unica. Ogni prodotto è realizzato a mano con <strong>carta piantabile con semi</strong>: una volta letto il messaggio, il foglio si pianta in terra e fiorisce, trasformandosi in un ricordo vivo e duraturo.</p>\n<p>La nostra <strong>carta piantabile personalizzata</strong> nasce all’interno della <strong>Casa Circondariale di Forlì</strong>, nella cartiera Manolibera, grazie al progetto sociale Altremani, di cui Rippotai è socia. Ogni acquisto contribuisce al reinserimento lavorativo dei detenuti e promuove valori concreti di inclusione e rispetto per l’ambiente.</p>\n<p>Perfetti per compleanni, anniversari, matrimoni, eventi aziendali e festività, i nostri <strong>biglietti in carta piantabile personalizzata</strong> e le <strong>idee regalo green</strong> uniscono design, etica e creatività. Un piccolo gesto che lascia un impatto positivo e che può davvero fiorire.</p>",
+      "en": ""
+    }
+  },
+  {
+    "handle": "biglietti-auguri-con-semi",
+    "parent": "cartoleria-ecologica-e-piantabile",
+    "group": "private",
+    "image": "/images/collections/biglietti-auguri-con-semi.jpg",
+    "title": {
+      "it": "Biglietti di auguri con semi",
+      "en": "Biglietti di auguri con semi"
+    },
+    "description": {
+      "it": "<p>Scopri i <strong>biglietti di auguri con semi</strong> Rippotai, realizzati con carta piantabile Recharta prodotta artigianalmente nella Cartiera ManoLibera, all’interno della Casa Circondariale di Forlì grazie all'impresa sociale Altremani di cui Rippotai è fieramente socia. Ogni biglietto contiene un mix di semi di fiori di campo, sostiene un progetto di inclusione lavorativa e, dopo aver custodito il tuo messaggio, può germogliare e trasformarsi in fiori.</p>",
+      "en": ""
+    }
+  },
+  {
+    "handle": "matita-piantabile",
+    "parent": "cartoleria-ecologica-e-piantabile",
+    "group": "private",
+    "image": "/images/collections/matita-piantabile.jpg",
+    "title": {
+      "it": "Matita Piantabile con Semi di Camomilla e Assenzio",
+      "en": "Matita Piantabile con Semi di Camomilla e Assenzio"
+    },
+    "description": {
+      "it": "<p>Non è una matita di legno: la <strong>matita piantabil</strong>e Rippotai è realizzata in carta riciclata, completamente compostabile, con semi di camomilla e assenzio. Ogni volta che la temperi, i trucioli si seminano. Non esistono sprechi — nemmeno uno.<br />Ogni matita è accompagnata da un <strong>blister in carta piantabile</strong>: un’idea regalo <strong>eco-friendly e originale</strong>, perfetta per maestre, matrimoni, feste ed eventi green.</p>\n<h2>Cerchi una matita piantabile personalizzata?</h2>\n<p>Se stai cercando la matita piantabile come bomboniera per il tuo matrimonio, come gadget per un evento o come idea regalo personalizzata con logo per fiere e aziende, abbiamo una versione dedicata. Puoi personalizzare sia la matita che il blister con nomi, date, loghi e dediche.</p>\n<p><a rel=\"noopener\" href=\"/it-it/collections/green-gadgets/products/gadget-eco-matite-con-semi-personalizzabili\" target=\"_blank\">→ Scopri la matita piantabile personalizzabile</a></p>",
+      "en": ""
+    }
+  },
+  {
+    "handle": "quaderni-e-notebook",
+    "parent": "cartoleria-ecologica-e-piantabile",
+    "group": "private",
+    "image": "/images/collections/quaderni-e-notebook.jpg",
+    "title": {
+      "it": "Quaderni Ecologici: Sostenibilità e Design per Ogni Occasione",
+      "en": "Quaderni Ecologici: Sostenibilità e Design per Ogni Occasione"
+    },
+    "description": {
+      "it": "<p>Se cerchi un'alternativa eco-friendly per i tuoi appunti, i nostri <strong>quaderni ecologici</strong> sono la scelta ideale. Realizzati con materiali riciclati e lavorati in modo sostenibile, combinano qualità e rispetto per l'ambiente. Perfetti per studenti, professionisti e amanti della scrittura consapevole.</p>",
+      "en": ""
+    }
+  },
+  {
+    "handle": "bombe-di-semi",
+    "parent": "cartoleria-ecologica-e-piantabile",
+    "group": "private",
+    "image": "/images/collections/bombe-di-semi.jpg",
+    "title": {
+      "it": "Bombe di Semi – Idee Regalo Ecologiche e Sostenibili",
+      "en": "Bombe di Semi – Idee Regalo Ecologiche e Sostenibili"
+    },
+    "description": {
+      "it": "<p>Le <strong>bombe di semi</strong> di Rippotai sono più di un semplice prodotto: sono un gesto d’amore verso la natura e il pianeta. Realizzate con materiali ecologici e confezionate in modo sostenibile, queste palline contengono semi selezionati per creare fiori e piante che attirano api e farfalle, contribuendo alla biodiversità.</p>\n<p>Perfette come <strong>idee regalo ecologiche</strong>, le bombe di semi rappresentano un'alternativa originale e sostenibile per celebrare ogni occasione. Pianta, annaffia e osserva la magia della natura prendere vita. Ogni confezione è un mix di creatività, innovazione e rispetto per l'ambiente.</p>",
+      "en": ""
+    }
+  },
+  {
+    "handle": "sottopiatti-e-tovagliette-in-carta",
+    "parent": "cartoleria-ecologica-e-piantabile",
+    "group": "private",
+    "image": "/images/collections/sottopiatti-e-tovagliette-in-carta.jpg",
+    "title": {
+      "it": "Sottopiatti e tovagliette in carta",
+      "en": "Sottopiatti e tovagliette in carta"
+    },
+    "description": {
+      "it": "<p><strong>Scopri la Collezione di Tovagliette e Sottopiatti in Carta Lavabile di Rippotai: Eleganza Sostenibile per la Tua Tavola</strong></p>\n<p>Arricchisci la tua tavola con la nostra collezione di <strong>tovagliette e sottopiatti in carta lavabile</strong>, un perfetto connubio tra design innovativo e sostenibilità. Realizzati con materiali ecologici, questi accessori sono non solo esteticamente piacevoli, ma anche rispettosi dell'ambiente.</p>\n<h4>Caratteristiche Principali:</h4>\n<ul>\n<li>\n<strong>Materiale Ecologico</strong>: Le tovagliette e i sottopiatti sono realizzati in carta lavabile, un materiale sostenibile che combina resistenza e facilità di manutenzione.</li>\n<li>\n<strong>Design Innovativo</strong>: Ogni pezzo è frutto di un'attenta progettazione che unisce estetica e funzionalità, per adattarsi a qualsiasi stile di arredamento.</li>\n<li>\n<strong>Personalizzazione</strong>: Offriamo soluzioni personalizzabili per rendere ogni pezzo unico e perfetto per qualsiasi occasione speciale.</li>\n</ul>\n<h4>Benefici per Te e l'Ambiente:</h4>\n<ul>\n<li>\n<strong>Sostenibilità</strong>: Usare materiali ecologici è una scelta consapevole per ridurre l'impatto ambientale. I nostri prodotti sono atossici e sicuri per te e la tua famiglia.</li>\n<li>\n<strong>Stile e Funzionalità</strong>: Con una vasta gamma di design, le nostre tovagliette e sottopiatti non solo proteggono la tua tavola, ma la arricchiscono con un tocco di classe.</li>\n</ul>",
+      "en": ""
+    }
+  },
+  {
+    "handle": "ventagli-di-carta",
+    "parent": "cartoleria-ecologica-e-piantabile",
+    "group": "private",
+    "image": "/images/collections/ventagli-di-carta.jpg",
+    "title": {
+      "it": "Ventagli di carta artigianali e sostenibili",
+      "en": "Handmade and sustainable paper fans"
+    },
+    "description": {
+      "it": "<p>I <strong>ventagli di carta</strong> sono l’accessorio perfetto per affrontare le giornate più calde con eleganza, ironia e attenzione all’ambiente. Sono realizzati a mano utilizzando <strong>carta riciclata proveniente dal carcere di Forlì</strong>, acquistata grazie al progetto di Altremani, l’<strong>impresa sociale di cui siamo fieramente soci</strong>.<br />Ogni ventaglio è il risultato di un processo consapevole che mette al centro <strong>le persone, il lavoro e il rispetto per l’ambiente</strong>.</p>\n<p><strong>Leggeri, sostenibili, dal design che rinfresca lo stile. </strong></p>\n<p>Pratici da portare sempre con sé, uniscono <strong>funzionalità e design</strong>, diventando un dettaglio distintivo per eventi, cerimonie, uso quotidiano o idee regalo originali. La nostra collezione di ventagli di carta nasce dall’incontro tra <strong>grafica creativa</strong>, materiali responsabili e uno stile contemporaneo pensato per chi ama distinguersi anche nei piccoli gesti.</p>",
+      "en": "<p><strong>Paper fans</strong> are the perfect accessory for embracing the hottest days with elegance, humor, and eco-friendliness. They're handmade using <strong>recycled paper from the Forlì prison</strong> , purchased through Altremani, the <strong>social enterprise we're proud members of</strong> .<br /> Each fan is the result of a conscious process that puts <strong>people, work and respect for the environment</strong> at the centre.</p>\n<p> <strong>Lightweight, sustainable, with a design that refreshes your style.</strong></p>\n<p> Convenient to carry, they combine <strong>functionality and design</strong> , becoming a distinctive detail for events, ceremonies, everyday use, or original gift ideas. Our collection of paper fans is born from the combination of <strong>creative graphics</strong> , responsible materials, and a contemporary style designed for those who love to stand out even in small gestures.</p>"
+    }
+  },
+  {
+    "handle": "soluzioni-sostenibili-per-hotel-e-hospitality",
+    "parent": null,
+    "group": "company",
+    "image": null,
+    "title": {
+      "it": "Soluzioni per Hotel Sostenibili | Arredi e Segnaletica Eco-Friendly",
+      "en": "Soluzioni per Hotel Sostenibili | Arredi e Segnaletica Eco-Friendly"
+    },
+    "description": {
+      "it": "",
+      "en": ""
+    }
+  },
+  {
+    "handle": "green-gadgets",
+    "parent": null,
+    "group": "company",
+    "image": "/images/collections/green-gadgets.jpg",
+    "title": {
+      "it": "Gadget Green Aziendali Personalizzati",
+      "en": "Custom Corporate Green Gadgets"
+    },
+    "description": {
+      "it": "<p>Gadget green ecologici con il tuo logo, pensati per aziende che vogliono comunicare i propri valori di sostenibilità in modo concreto, innovativo e creativo. Ogni oggetto è personalizzabile e realizzato artigianalmente in Italia con materiali sostenibili e lavorazioni trasparenti. Nessuna produzione di massa, nessuna importazione: sai esattamente cosa acquisti e come viene fatto.</p>",
+      "en": "<p>Eco-friendly green gadgets with your logo, designed for companies that want to communicate their sustainability values in a concrete, innovative, and creative way. Each item is customizable and handcrafted in Italy with sustainable materials and transparent processes. No mass production, no imports: you know exactly what you are buying and how it is made.</p>"
+    }
+  },
+  {
+    "handle": "allestimenti-allestimenti-ecosostenibili-su-misura",
+    "parent": null,
+    "group": "company",
+    "image": "/images/collections/allestimenti-allestimenti-ecosostenibili-su-misura.jpg",
+    "title": {
+      "it": "Allestimenti ecosostenibili su misura per eventi e fiere",
+      "en": "Allestimenti ecosostenibili su misura per eventi e fiere"
+    },
+    "description": {
+      "it": "<p><strong>Benvenuti nella collezione di Allestimenti ecosostenibili Su Misura di Rippotai</strong>: dove la sostenibilità incontra la personalizzazione per creare soluzioni espositive uniche e rispettose dell'ambiente. La nostra missione è integrare la sostenibilità nelle strategie aziendali dei nostri clienti attraverso la progettazione e produzione di allestimenti ecologici su misura, utilizzando materiali riciclabili e processi produttivi a basso impatto ambientale. </p>\n<p>Se stai cercando soluzioni innovative e sostenibili per i tuoi eventi, i nostri <strong>allestimenti ecosostenibili su misura</strong> sono la scelta perfetta. Grazie a materiali riciclati, design modulare e tecnologie a basso impatto ambientale, offriamo allestimenti personalizzati per fiere, showroom, negozi e spazi espositivi, garantendo un’esperienza unica e rispettosa dell’ambiente.</p>",
+      "en": ""
+    }
+  },
+  {
+    "handle": "quadri-motivazionali",
+    "parent": null,
+    "group": "company",
+    "image": "/images/collections/quadri-motivazionali.jpg",
+    "title": {
+      "it": "Quadri Motivazionali per Ufficio e Casa",
+      "en": "Motivational Paintings for Office and Home"
+    },
+    "description": {
+      "it": "<p>Scegli i <strong>quadri motivazionali</strong> Rippotai e porta sulle pareti un messaggio capace di ispirare idee, energia e condivisione. Scopri grafiche dal carattere vintage pensate per dare personalità all’ufficio, allo studio o agli spazi di casa.</p>\n<p><strong>Scegli ora il quadro motivazionale che più ti rappresenta e porta ispirazione nelle tue giornate!</strong></p>",
+      "en": "<p>Discover our collection of <strong>vintage motivational pictures</strong> , made of durable honeycomb cardboard, perfect for hanging in the office, study or creative spaces.<br /> Each painting features <strong>powerful motivational quotes</strong> that inspire focus, energy, and positivity throughout your workday.</p>\n<p> Add a unique touch to your space with a <strong>retro design graphic</strong> , ideal for those who love vintage style but want to convey a modern and inspiring message.</p>\n<h3> Why choose our motivational paintings? </h3>\n<ul>\n<li>\n<p> Lightweight and durable material (eco-friendly honeycomb cardboard). <br /></p>\n</li>\n<li>\n<p> High definition printing with exclusive vintage graphics. </p>\n</li>\n<li>\n<p> Easy to hang and move. </p>\n</li>\n<li>\n<p> Selected motivational quotes for business and education.</p>\n</li>\n<li>\n <strong>Customizable</strong> with your favorite phrase or name: create a unique painting for yourself or as a special gift.</li>\n</ul>\n<p> Whether you want <strong>to decorate your office</strong> , a meeting room, or create a creative corner at home, our paintings will help you transform the environment into a space full of positive energy.</p>\n<p> <strong>Choose now the motivational painting that best represents you and bring inspiration into your days!</strong></p>"
+    }
+  }
+]

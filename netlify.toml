@@ -1,0 +1,11 @@
+# Netlify bouwt de Next.js-app met @netlify/plugin-nextjs (SSR, server actions en middleware als functions).
+# Let op: zet in productie DATABASE_URL naar PostgreSQL (zie README) — SQLite werkt niet op Netlify.
+[build]
+  command = "npx prisma generate && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

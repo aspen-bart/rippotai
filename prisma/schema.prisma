@@ -1,0 +1,160 @@
+// Datamodel voor Rippotai. SQLite lokaal; voor productie (Netlify) `provider` naar "postgresql"
+// zetten en DATABASE_URL aanpassen (zie README).
+// Vertaalbare velden zijn JSON-objecten per taal, bv. {"it": "...", "en": "..."}, zodat er later
+// talen bij kunnen zonder schemawijziging.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model Category {
+  id          String     @id @default(cuid())
+  handle      String     @unique
+  /// "private" (Shop Privati) of "company" (Shop Aziende)
+  group       String     @default("private")
+  title       Json
+  description Json
+  /// korte slogan boven de titel op de categoriepagina
+  tagline     Json?
+  image       String?
+  sortOrder   Int        @default(0)
+  published   Boolean    @default(true)
+  parentId    String?
+  parent      Category?  @relation("CategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children    Category[] @relation("CategoryTree")
+  products    Product[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Product {
+  id            String           @id @default(cuid())
+  handle        String           @unique
+  /// Engelse URL-handle (Shopify vertaalt handles per taal)
+  handleEn      String?          @unique
+  title         Json
+  body          Json
+  vendor        String?
+  productType   String?
+  tags          Json?
+  options       Json?
+  images        Json
+  /// prijs in eurocent van de goedkoopste variant
+  priceCents    Int
+  compareCents  Int?
+  featured      Boolean          @default(false)
+  published     Boolean          @default(true)
+  sortOrder     Int              @default(0)
+  variants      ProductVariant[]
+  categories    Category[]
+  reviews       Review[]
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+}
+
+model ProductVariant {
+  id           String  @id @default(cuid())
+  productId    String
+  product      Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  title        String
+  sku          String?
+  priceCents   Int
+  compareCents Int?
+  available    Boolean @default(true)
+  options      Json?
+  sortOrder    Int     @default(0)
+}
+
+model Page {
+  id          String   @id @default(cuid())
+  handle      String   @unique
+  handleEn    String?  @unique
+  title       Json
+  description Json
+  /// secties per taal: {"it": [{html, images, ctas}], "en": [...]}
+  sections    Json
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Review {
+  id          String   @id @default(cuid())
+  author      String
+  rating      Int
+  text        String
+  date        DateTime
+  productName String?
+  productId   String?
+  product     Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  published   Boolean  @default(true)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model PaymentMethod {
+  id        String  @id @default(cuid())
+  key       String  @unique
+  name      String
+  /// inline SVG-logo (zoals in de footer van de oude site)
+  svg       String
+  enabled   Boolean @default(true)
+  sortOrder Int     @default(0)
+}
+
+/// Losse instellingen (whatsapp, winkel, valuta, ...) als JSON per sleutel
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id            String   @id @default(cuid())
+  number        Int      @unique
+  email         String
+  name          String
+  phone         String?
+  address       Json
+  items         Json
+  subtotalCents Int
+  shippingCents Int      @default(0)
+  totalCents    Int
+  currency      String   @default("EUR")
+  paymentMethod String
+  locale        String   @default("it")
+  status        String   @default("pending")
+  note          String?
+  createdAt     DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  marketing Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

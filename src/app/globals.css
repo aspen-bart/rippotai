@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* Rippotai eco-design tokens: papier, bos, zaadgroen en terracotta (uit de plantbare-papierprints). */
+@theme {
+  --color-paper: #f7f3ea;
+  --color-paper-2: #efe8d8;
+  --color-kraft: #d8c3a0;
+  --color-kraft-dark: #a88a5c;
+  --color-forest: #1d3a2c;
+  --color-forest-2: #142a20;
+  --color-leaf: #17a086;
+  --color-leaf-dark: #0f7a66;
+  --color-sprout: #9cc56a;
+  --color-clay: #d0573c;
+  --color-sun: #e8b84a;
+  --color-ink: #1c1d1a;
+  --color-muted: #6b6a62;
+  --color-line: #e3dccb;
+
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-spin-slow: spin 22s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1.12); }
+    to { transform: scale(1.02); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper text-ink font-sans antialiased; }
+  ::selection { background: var(--color-sprout); color: var(--color-forest-2); }
+}
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+@utility eyebrow { @apply text-xs font-medium uppercase tracking-[0.22em] text-leaf-dark; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition duration-300 disabled:opacity-50; }
+@utility btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition duration-300 disabled:opacity-50 bg-forest text-paper hover:bg-leaf-dark; }
+@utility btn-leaf { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition duration-300 disabled:opacity-50 bg-leaf text-white hover:bg-leaf-dark; }
+@utility btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition duration-300 disabled:opacity-50 border border-current hover:bg-forest hover:text-paper hover:border-forest; }
+@utility btn-light { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition duration-300 disabled:opacity-50 bg-paper text-forest hover:bg-sprout; }
+@utility field { @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition focus:border-leaf focus:ring-2 focus:ring-leaf/20; }
+
+@layer components {
+  .paper-grain {
+    background-image: radial-gradient(rgba(29, 58, 44, 0.06) 1px, transparent 1px), radial-gradient(rgba(168, 138, 92, 0.08) 1px, transparent 1px);
+    background-size: 18px 18px, 29px 29px;
+    background-position: 0 0, 9px 13px;
+  }
+
+  /* Rijke tekst uit Shopify (pagina's, beschrijvingen) */
+  .prose-eco { @apply text-[1.02rem] leading-relaxed text-ink/85; }
+  .prose-eco h2 { @apply font-display text-3xl md:text-4xl text-forest mt-8 mb-4 leading-tight; white-space: normal; }
+  .prose-eco h3 { @apply font-display text-2xl text-forest mt-6 mb-3; }
+  .prose-eco h4, .prose-eco h5 { @apply font-semibold text-forest mt-5 mb-2; }
+  .prose-eco p { @apply my-4; }
+  .prose-eco a { @apply text-leaf-dark underline decoration-sprout decoration-2 underline-offset-4 hover:text-forest; }
+  .prose-eco ul { @apply my-4 list-disc pl-6 space-y-1.5 marker:text-leaf; }
+  .prose-eco ol { @apply my-4 list-decimal pl-6 space-y-1.5 marker:text-leaf; }
+  .prose-eco strong { @apply font-semibold text-forest; }
+  .prose-eco img { @apply my-6 rounded-2xl; }
+  .prose-eco blockquote { @apply border-l-4 border-sprout pl-5 italic font-display text-xl text-forest; }
+  .prose-eco table { @apply w-full text-sm my-6; }
+  .prose-eco td, .prose-eco th { @apply border border-line p-2; }
+  .prose-eco > :first-child { @apply mt-0; }
+}
