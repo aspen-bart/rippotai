@@ -12,7 +12,7 @@ zod, jose (JWT-sessie beheer), bcryptjs.
 ```bash
 npm install
 cp .env.example .env        # vul AUTH_SECRET en ADMIN_PASSWORD in
-npm run setup               # maakt de database aan en importeert content/*.json
+npm run setup               # maakt de SQLite-database aan en importeert content/*.json
 npm run dev                 # http://localhost:3100  (beheer: /admin)
 ```
 
@@ -54,16 +54,31 @@ src/components/site Header, footer, winkelwagen, productkaart, WhatsApp-knop, ..
 src/lib/            db, i18n + woordenboeken, catalogus-queries, menu, instellingen, server actions
 ```
 
-## Naar GitHub en Netlify (volgende stappen)
+## Database: SQLite lokaal, PostgreSQL op Netlify
 
-1. **Database:** SQLite werkt niet op Netlify. Maak een PostgreSQL-database (bv. Netlify DB / Neon), zet in
-   `prisma/schema.prisma` `provider = "postgresql"` en vul `DATABASE_URL` in. Daarna eenmalig
-   `npx prisma db push && npm run db:seed` tegen die database.
-2. **GitHub:** `git init`, eerste commit, push naar een nieuwe repository. `.env`, de lokale database en
-   `scripts/raw/` staan in `.gitignore`.
-3. **Netlify:** nieuwe site vanuit de repository; `netlify.toml` regelt build en de Next.js-plugin. Zet als
-   omgevingsvariabelen `DATABASE_URL`, `AUTH_SECRET`, `NEXT_PUBLIC_SITE_URL` (en `ADMIN_EMAIL`/`ADMIN_PASSWORD` voor de seed).
-4. **Uploads uit het beheer** worden lokaal in `public/uploads/` gezet. Op Netlify is het bestandssysteem niet
-   blijvend: koppel daarvoor later Netlify Blobs of S3.
-5. **Betalen:** de checkout registreert nu bestellingen zonder betaling (demo). Koppel een provider
-   (Mollie/Stripe) in `src/lib/actions/site.ts` → `placeOrder`.
+Er is één schema (`prisma/schema.prisma`). Draai Prisma altijd via de npm-scripts of `npm run prisma -- <commando>`:
+`scripts/prisma.mjs` kijkt naar `DATABASE_URL`. Bij een `postgresql://`-URL genereert het
+`prisma/schema.postgres.prisma` (provider `postgresql`, plus `directUrl` als `DIRECT_URL` gezet is) en gebruikt dat.
+Anders gewoon SQLite. Codewijzigingen zijn daarvoor niet nodig; de client bevat ook de engine voor Netlify
+(`binaryTargets`).
+
+## Live zetten op Netlify
+
+1. **PostgreSQL-database aanmaken**, bv. via Netlify DB of [Neon](https://neon.tech). Bij Neon: de *pooled* URL is
+   `DATABASE_URL`, de *direct* URL is `DIRECT_URL`.
+2. **Schema en content in die database zetten** (eenmalig, vanaf je eigen machine):
+   ```bash
+   DATABASE_URL="postgresql://..." DIRECT_URL="postgresql://..." ADMIN_PASSWORD="..." npm run setup
+   ```
+   Daarna lokaal weer `npm run prisma -- generate` (zonder die variabelen) om de SQLite-client terug te zetten.
+3. **Netlify-site koppelen** aan GitHub-repo `aspen-bart/rippotai`. `netlify.toml` regelt de build
+   (`npm run build`) en de Next.js-plugin.
+4. **Omgevingsvariabelen in Netlify:** `DATABASE_URL`, `DIRECT_URL`, `AUTH_SECRET` (min. 32 tekens) en
+   `NEXT_PUBLIC_SITE_URL` (de live URL).
+5. **Na een schemawijziging:** stap 2 opnieuw met alleen `npm run db:push`.
+
+Nog te regelen:
+- **Uploads uit het beheer** komen in `public/uploads/`. Op Netlify blijft dat niet bewaard; koppel daarvoor
+  Netlify Blobs of S3 (`src/lib/admin/upload.ts`).
+- **Betalen:** de checkout registreert bestellingen zonder betaling (demo). Koppel een provider
+  (Mollie/Stripe) in `src/lib/actions/site.ts` → `placeOrder`.

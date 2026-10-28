@@ -1,10 +1,13 @@
-// Datamodel voor Rippotai. SQLite lokaal; voor productie (Netlify) `provider` naar "postgresql"
-// zetten en DATABASE_URL aanpassen (zie README).
+// Datamodel voor Rippotai. Lokaal SQLite; in productie (Netlify) PostgreSQL. Draai Prisma altijd via
+// `npm run prisma -- <commando>` (scripts/prisma.mjs): bij een postgres-DATABASE_URL wordt automatisch
+// prisma/schema.postgres.prisma gegenereerd en gebruikt. Pas alleen dit bestand aan.
 // Vertaalbare velden zijn JSON-objecten per taal, bv. {"it": "...", "en": "..."}, zodat er later
 // talen bij kunnen zonder schemawijziging.
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  // rhel-openssl-3.0.x = runtime van Netlify Functions
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {

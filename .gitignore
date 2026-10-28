@@ -51,3 +51,6 @@ next-env.d.ts
 
 # lokale uploads uit /admin (op Netlify niet persistent)
 /public/uploads/
+
+# gegenereerd door scripts/prisma.mjs
+/prisma/schema.postgres.prisma
