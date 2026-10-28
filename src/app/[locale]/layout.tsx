@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import { Fraunces, Jost } from "next/font/google";
 import "../globals.css";
-import { LANGS, LOCALE_PREFIX, langFromPrefix, localePath, t } from "@/lib/i18n";
+import { langFromPrefix, localePath, t } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 import { getSetting } from "@/lib/settings";
 import { buildMenu } from "@/lib/menu";
@@ -18,11 +18,8 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 const jost = Jost({ subsets: ["latin"], variable: "--font-jost", display: "swap" });
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap", axes: ["SOFT", "opsz"] });
 
+// Alles server-side renderen: content komt uit de database en wordt via /admin aangepast.
 export const dynamic = "force-dynamic";
-
-export function generateStaticParams() {
-  return LANGS.map((l) => ({ locale: LOCALE_PREFIX[l] }));
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const lang = langFromPrefix((await params).locale) ?? "it";
